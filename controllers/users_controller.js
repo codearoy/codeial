@@ -27,7 +27,7 @@ module.exports.signIn = function(req , res){
     }
 
     return res.render('user_sign_in' , {
-        title : "Codeial | Sign In" , 
+        title : "Codeial | sign in" , 
     })
 }
 
@@ -56,5 +56,13 @@ module.exports.create = function(req , res){
 
 module.exports.createSession = function(req , res){
     // todo later 
-    return res.redirect('/users/profile') ; 
+    return res.redirect('/') ; 
 }
+
+module.exports.destroySession = function(req , res , next){
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
+} 
+
