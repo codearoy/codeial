@@ -1,11 +1,9 @@
 // step 1 . entry point to the server (index.js)  and npm init  it will create package.json
-
 // step 2 . mkdir routes controllers views models config
 //          creating folder for different step
-
 //  step3 : fire up our express server -  $ npm install epress
-
 //  step 4.a : set up our server
+
 const express = require('express') ; 
 const cookieParser = require('cookie-parser') ; 
 const app = express() ; 
@@ -13,12 +11,21 @@ const port = 8000 ;
 // step 8 . express layouts
 const expressLayouts = require('express-ejs-layouts') ; 
 const db = require('./config/mongoose') ;
-
 const session = require('express-session') ; 
 const passport = require('passport') ; 
 const passportLocal = require('./config/passport-local-strategy') ; 
-
 const MongoDBStore = require('connect-mongodb-session')(session);
+const sassMiddleware = require('node-sass-middleware') ; 
+ 
+
+
+app.use(sassMiddleware({
+src : './assets/scss' ,
+dest : './assets/css' ,
+debug : true ,
+outputStyle : 'extended' ,
+prefix : '/css'
+})) ; 
 
 app.use(express.urlencoded()) ;  
 // for cookie 
