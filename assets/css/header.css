@@ -1,0 +1,36 @@
+body {
+  box-sizing: border-box; }
+
+nav {
+  border-radius: 15px;
+  background-color: #b6d6ff;
+  width: 100vw; }
+  nav ul {
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+    margin-right: 5vw; }
+    nav ul li {
+      margin: 0 10px;
+      color: #5c3380;
+      list-style: none;
+      min-width: fit-content; }
+      nav ul li a {
+        text-decoration: none;
+        cursor: pointer; }
+  nav #logo-content {
+    display: flex;
+    align-items: center; }
+    nav #logo-content h3 {
+      margin: 10px;
+      font-size: 20px; }
+  nav #space-only {
+    width: 70vw; }
+  nav #logo {
+    text-align: center;
+    color: white;
+    background-color: #5c3380;
+    border-radius: 10px;
+    height: 30px;
+    width: 30px;
+    padding: 5px; }
