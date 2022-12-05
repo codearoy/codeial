@@ -7,12 +7,17 @@ const postSchema = new mongoose.Schema({
     } , 
     user : {
         type : mongoose.Schema.Types.ObjectId ,
-        ref : 'users' ,  
-    }
+        ref : 'User' ,  
+    } , 
+    // include the array of ids of all the comments 
+    comments : [{
+        type : mongoose.Schema.Types.ObjectId , 
+        ref : 'Comment' 
+    }]
 },{
     timestamps : true 
 }) ;
 
 
-const Post = mongoose.model('post' , postSchema) ; 
+const Post = mongoose.model('Post' , postSchema) ; 
 module.exports = Post ; 

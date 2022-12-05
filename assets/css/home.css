@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  box-sizing: border-box; }
+
+#posts-list-container ul {
+  display: flex;
+  flex-wrap: wrap; }
+  #posts-list-container ul li {
+    background-color: lightgreen;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    list-style-type: none;
+    margin: 20px; }
+    #posts-list-container ul li .post-comment, #posts-list-container ul li .post-comments-list {
+      display: inline-block;
+      background-color: coral;
+      width: auto;
+      height: fit-content; }
