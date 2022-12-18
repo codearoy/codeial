@@ -1,0 +1,50 @@
+ 
+                    <li class="postWrapper">
+                        <div class="postHeader">
+                            <div class="postAvatar">
+                                <img src="" alt="post-user-pic" />
+                                <div>
+                                    <%= post.user.name %>
+                                </div>
+
+                                <div>
+                                    <% if(locals.user && locals.user.id == post.user.id){ %>
+                                        <a href="/posts/destroy/<%= post.id %>"> delete post </a>
+                                    <% } %>
+
+                                </div>
+
+                               
+
+                            </div>
+                            <div class="postContent">
+                                <%= post.content %>
+                            </div>
+
+                            <div class="postActions">
+
+                            </div>
+                            <div class="postCommentBox">
+                                <% if(locals.user) { %>
+                                    <form action="/comments/create" id="" method="post">
+                                        <input name="content" id="" placeholder="Type Here..." />
+                                        <input type="hidden" name="post" value="<%= post._id %>" />
+                                        <input type="submit" value="Add Comment" />
+                                    </form>
+                                    <% } %>
+
+
+                            </div>
+
+                            <div class="postCommentsList">
+                                <ul id="post-comments-<%=post._id%>">
+                                    <% for(comment of post.comments){ %>
+                                        
+<%- include('_comment') -%>
+
+                                        <% } %>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
